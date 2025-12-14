@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="so">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GU VOTE - Voting System</title>
+  <style>
+    :root{
+      --primary:#6b21a8;
+      --primary-2:#9333ea;
+      --accent:#facc15;
+      --text:#ffffff;
+      --glass: rgba(0,0,0,0.12);
+      --glass-2: rgba(0,0,0,0.2);
+    }
+
+    *{ box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background: linear-gradient(to bottom right, var(--primary), var(--primary-2));
+      color: var(--text);
+    }
+    
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 40px;
+      background: var(--glass);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .logo a {
+      display: inline-block;
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      color: var(--text);
+      text-decoration: none;
+    }
+    nav {
+      display: flex;
+      gap: 20px;
+    }
+    nav a {
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 600;
+      font-size: 16px;
+      text-transform: capitalize;
+      transition: color 0.25s ease, opacity 0.25s ease;
+      opacity: 0.9;
+    }
+    nav a:hover {
+      color: var(--accent);
+      opacity: 1;
+    }
+
+    section {
+      padding: 60px 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* Hero + About layout with image */
+    .split {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 40px;
+      align-items: center;
+    }
+    .split.reverse {
+      grid-template-columns: 0.9fr 1.1fr;
+    }
+    .img-card {
+      background: var(--glass-2);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    }
+    .img-card img {
+      display: block;
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+
+    h1, h2 {
+      margin: 0 0 16px;
+    }
+    p {
+      font-size: 16px;
+      line-height: 1.7;
+      opacity: 0.95;
+      margin: 0 0 18px;
+    }
+
+    .btn {
+      padding: 12px 20px;
+      background: #ffffff;
+      color: var(--primary);
+      border: none;
+      border-radius: 10px;
+      font-weight: 800;
+      cursor: pointer;
+      transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+    }
+    .btn:hover {
+      background: #f3e8ff;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    }
+    .btn:active {
+      transform: translateY(0);
+      box-shadow: none;
+    }
+    .btn-link {
+      display: inline-block;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* Contact form */
+    form {
+      max-width: 520px;
+      margin-top: 20px;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 16px;
+      border-radius: 10px;
+      border: 1px solid rgba(255,255,255,0.18);
+      background: rgba(255,255,255,0.08);
+      color: var(--text);
+      font-size: 14px;
+      outline: none;
+    }
+    input::placeholder, textarea::placeholder {
+      color: rgba(255,255,255,0.8);
+    }
+    textarea {
+      height: 140px;
+      resize: vertical;
+    }
+
+    footer {
+      background: var(--glass-2);
+      text-align: center;
+      padding: 24px 40px;
+      font-size: 14px;
+      color: #e0e0e0;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+    footer nav {
+      justify-content: center;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .split, .split.reverse {
+        grid-template-columns: 1fr;
+      }
+      header { padding: 14px 24px; }
+      section { padding: 44px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="logo"><a href="index.html">GU VOTE</a></div>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <a href="login.php">Vote</a>
+    </nav>
+  </header>
+
+  <!-- Home Section (Hero with image) -->
+  <section id="home" class="split">
+    <div>
+      <h1>GU Voting System</h1>
+      <p>Ku soo dhawoow GU VOTE — madal casri ah oo ammaan ah
+        oo loogu talagalay doorashooyin dijitaal ah. Ka codee
+        meelkasta, wakhti kasta, adigoon saf iyo waraaqo u baahnayn.</p>
+      <a class="btn-link" href="login.php"><button class="btn">Vote Now</button></a>
+    </div>
+    <div class="img-card" aria-hidden="false">
+      <img src="assets/f img/2.svg" alt="Muqaal dadka si dijitaal ah u codeynaya laptop iyo mobile" />
+    </div>
+  </section>
+
+  <!-- About Section (with image) -->
+  <section id="about" class="split reverse">
+    <div class="img-card">
+      <img src="assets/f img/4.svg" alt="Astaamo muujinaya hufnaan, helitaan, iyo natiijooyin waqtiga-dhabta ah" />
+    </div>
+    <div>
+      <h2>About GU VOTE</h2>
+      <p>GU VOTE waxa loo naqshadeeyey in ay sahasho doorashooyinka iyada oo la adeegsanayo
+        tignoolajiyada. Nidaamkeennu waxa uu dammaanad qaadaa hufnaan, helitaan, iyo
+        natiijooyin waqtiga-dhabta ah. Haddi aad u codeynayso hoggaamiyeyaal deegaanka
+        ama heer qaran, madalkani waxa ay ka dhigaysaa mid sahlan oo ammaan ah.</p>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Nala Soo Xidhiidh</h2>
+    <p>Su’aalo ma qabtaa ama caawimaad? Noo soo dir fariin hoose:</p>
+    
+    <form action="contacts.php" method="POST">
+  <input type="text" name="name" placeholder="Magacaaga" required />
+  <input type="email" name="email" placeholder="Email-kaaga" required />
+  <textarea name="message" placeholder="Fariintaada" required></textarea>
+  <button class="btn" type="submit">Dir Fariin</button>
+  </form>
+</form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <a href="login.php">Vote</a>
+    </nav>
+  </footer>
+
+</body>
+</html>
